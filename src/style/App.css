@@ -114,7 +114,7 @@ label {
 }
 
 div{
-    padding: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 .labelheader{
     font-weight: bold;
@@ -251,6 +251,19 @@ input[type='radio']:checked:after {
     display: inline-block;
     visibility: visible;
     border: 5px solid #337ab7
+}
+
+.package-card .table>tbody>tr>td{
+    border: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.package-card .list-group{
+    box-shadow: none;
+}
+
+.package-card .list-group-item{
+    border: 0;
 }
 
 h6 {

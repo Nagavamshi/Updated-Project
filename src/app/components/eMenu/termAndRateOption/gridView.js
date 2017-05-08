@@ -1,5 +1,5 @@
 import React from 'react';
-var axios = require('axios');
+import axios from 'axios';
 import HttpHelper  from '../../../Helper/httpHelper.js';
 
 class GridView extends React.Component {

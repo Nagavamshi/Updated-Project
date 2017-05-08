@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import ReduxPromise from 'redux-promise';
 import App from './App';
+import reducers from './createStore';
+
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-	<App/>,
-	document.getElementById('root')
-);
+    <Provider store={createStoreWithMiddleware(reducers)}>
+    <App/>
+    </Provider>, document.getElementById('root'));
+
 
  let queryparam =  function(){
     var vars = [], hash;
@@ -21,4 +29,7 @@ for(var i = 0; i < hashes.length; i++)
 
 localStorage.setItem("dealer_code",queryparam().dealer_code)
 localStorage.setItem("dealid",queryparam().dealid)
-localStorage.setItem("dealjacketid",queryparam().dealjacketid)
+localStorage.setItem("dealjacketid", queryparam().dealjacketid)
+
+
+

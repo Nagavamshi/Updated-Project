@@ -5,6 +5,7 @@ import HttpHelper from '../../Helper/httpHelper';
 import RequireProvider from './reqProvider/requiredField';
 import TermRate from './termAndRateOption/termRate';
 import ProductHeading from './productView/productHeading';
+import InvoiceView from './invoice/invoiceView';
 
 export default class eMenu extends Component {
     constructor(props) {
@@ -196,16 +197,7 @@ export default class eMenu extends Component {
     render() {
         return (
             <div>
-                {this.state.reqFieldResponseUI ?
-
-                      <RequireProvider header='eMenu' IsEdit={this.state.saveEMenu} data={this.state.reqFieldResponseUI} events={this.events} />
-                     :
-                    null}
-              <TermRate events={this.events.eMenuOnsave}/>
-                {!this.state.saveEMenu?
-
-                      <ProductHeading/>
-                    :null}
+                <InvoiceView />
             </div>
         );
     }
